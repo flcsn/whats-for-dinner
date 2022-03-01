@@ -7,9 +7,21 @@ const App = () => {
         <h2 className='app-title'>What&apos;s for Dinner?</h2>
         <div>
           <p className='step-label'>Step 1: Select an ingredient </p>
+          <select className='select-ingredient' name='ingredient'>
+            <option selected='selected'>Any</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
         </div>
         <div>
           <p className='step-label'>Step 2: Select a tag</p>
+          <select className='select-tag' name='tag'>
+            <option selected='selected'>Any</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
         </div>
         <div>
           <p className='step-label'>Step 3: Find dinner ideas!</p>

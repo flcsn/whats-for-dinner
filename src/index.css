@@ -55,8 +55,9 @@ ul {
 .left-main-container {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: 15% repeat(3, 1fr);
   padding: 20px;
+  align-items: center;
   background-color: var(--color-primary);
 }
 
