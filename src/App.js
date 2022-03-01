@@ -5,7 +5,7 @@ const App = () => {
     <div className='main-container'>
       <div className='left-main-container'>
         <h2 className='app-title'>What&apos;s for Dinner?</h2>
-        <div>
+        <div className='step-1-container'>
           <p className='step-label'>Step 1: Select an ingredient </p>
           <select className='select-ingredient' name='ingredient'>
             <option selected='selected'>Any</option>
@@ -14,7 +14,7 @@ const App = () => {
             <option>3</option>
           </select>
         </div>
-        <div>
+        <div className='step-2-container'>
           <p className='step-label'>Step 2: Select a tag</p>
           <select className='select-tag' name='tag'>
             <option selected='selected'>Any</option>
@@ -23,8 +23,9 @@ const App = () => {
             <option>3</option>
           </select>
         </div>
-        <div>
+        <div className='step-3-container'>
           <p className='step-label'>Step 3: Find dinner ideas!</p>
+          <p>Search for dinner ideas with INGREDIENT and TAG</p>
           <div className='btn-container'>
             <button className='submit-btn'>Go!</button>
           </div>
