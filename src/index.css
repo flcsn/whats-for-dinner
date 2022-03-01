@@ -50,7 +50,7 @@ ul {
 
 .main-container {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 2fr 3fr;
   grid-template-rows: 100vh;
   gap: 20px;
 }
@@ -89,13 +89,13 @@ ul {
   border-radius: 2px;
   padding: 10px 20px;
   width: 200px;
-  text-align: center;
+  background-color: #f8f8f8;
   appearance: none;
 }
 
 .select-tag:focus, .select-ingredient:focus {
   outline: none;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #f0f0f0;
 }
 
 .step-3-container {
@@ -112,6 +112,7 @@ ul {
 
 .submit-btn {
   width: 100%;
+  border-radius: 2px;
   padding: 7px 14px;
   color: var(--color-white);
   font-weight: 600;
@@ -124,5 +125,20 @@ ul {
 /* Right Main Container */
 
 .right-main-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px 1fr;
   background-color: var(--color-white);
+}
+
+.status-header {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.8);
+}
+
+.status-line {
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }

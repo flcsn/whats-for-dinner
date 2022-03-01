@@ -32,7 +32,12 @@ const App = () => {
         </div>
       </div>
       <div className='right-main-container'>
-        <p>Hello!</p>
+        <div className='status-header'>
+          <p className='status-line'>Searching for INGREDIENT recipes that is TAG...</p>
+        </div>
+        <div>
+
+        </div>
       </div>
     </div>
   )
