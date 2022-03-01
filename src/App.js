@@ -25,6 +25,9 @@ const App = () => {
         </div>
         <div>
           <p className='step-label'>Step 3: Find dinner ideas!</p>
+          <div className='btn-container'>
+            <button className='submit-btn'>Go!</button>
+          </div>
         </div>
       </div>
       <div className='right-main-container'>

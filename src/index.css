@@ -72,6 +72,21 @@ ul {
   font-weight: 600;
 }
 
+.btn-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 7px 14px;
+  color: var(--color-white);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background-color: var(--color-secondary)
+}
+
 .right-main-container {
   background-color: var(--color-white);
 }
