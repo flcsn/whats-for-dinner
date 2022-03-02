@@ -78,10 +78,15 @@ ul {
   min-height: 100%;
 }
 
+.app-title-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
 .app-title {
-  font-size: 28px;
+  font-size: 20px;
   letter-spacing: -1px;
-  text-align: center;
 }
 
 .step-label {
