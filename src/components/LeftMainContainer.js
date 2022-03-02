@@ -3,11 +3,11 @@ import React from 'react'
 import AppTitle from './AppTitle'
 import UserInputForm from './UserInputForm'
 
-const LeftMainContainer = () => {
+const LeftMainContainer = ({ setRecipes }) => {
   return (
     <div className='left-main-container'>
       <AppTitle />
-      <UserInputForm />
+      <UserInputForm setRecipes={setRecipes} />
     </div>
   )
 }
