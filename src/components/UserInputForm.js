@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import recipeService from '../services/recipeService'
 
 const UserInputForm = () => {
-  const handleSubmit = (event) => {
+  const [recipes, setRecipes] = useState([])
+  console.log('recipes', recipes)
+
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log({
-      ingredient: event.target.ingredient.value,
-      tag: event.target.tag.value
-    })
+
+    const ingredient = event.target.ingredient.value
+    const tag = event.target.tag.value
+    console.log({ ingredient, tag })
+    try {
+      const data = await recipeService.getRecipe(ingredient, tag)
+      setRecipes(data.results)
+    } catch (e) {
+      console.error(e)
+    }
   }
 
   return (
@@ -18,7 +28,7 @@ const UserInputForm = () => {
           name='ingredient'
         >
           <option>Any</option>
-          <option>Chicken</option>
+          <option>chicken</option>
           <option>Beef</option>
           <option>Vegetable</option>
         </select>
@@ -30,7 +40,7 @@ const UserInputForm = () => {
           name='tag'
         >
           <option>Any</option>
-          <option>Under 30 minutes</option>
+          <option>under_30_minutes</option>
           <option>Vegetarian</option>
           <option>Lactose-free</option>
         </select>
