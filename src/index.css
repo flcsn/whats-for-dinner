@@ -66,7 +66,7 @@ ul {
 .left-main-container {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 15% repeat(3, 1fr);
+  grid-template-rows: 15% 1fr;
   grid-gap: 10px;
   padding: 20px;
   align-items: center;
@@ -89,6 +89,13 @@ ul {
   letter-spacing: -1px;
 }
 
+.user-input-form {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, fr);
+  min-height: 100%;
+}
+
 .step-label {
   font-size: 18px;
   font-weight: 600;
@@ -100,7 +107,6 @@ ul {
   padding: 10px 20px;
   width: 200px;
   background-color: #f8f8f8;
-  appearance: none;
 }
 
 .select-tag:focus, .select-ingredient:focus {

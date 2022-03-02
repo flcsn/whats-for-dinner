@@ -5,8 +5,6 @@ const SearchResults = () => {
   return (
     <div className='search-results'>
       <SearchItem />
-      <SearchItem />
-      <SearchItem />
     </div>
   )
 }
