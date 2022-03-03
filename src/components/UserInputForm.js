@@ -1,18 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import recipeService from '../services/recipeService'
 
-const UserInputForm = () => {
-  const [recipes, setRecipes] = useState([])
-  console.log('recipes', recipes)
-
+const UserInputForm = ({ setRecipes }) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
-
     const ingredient = event.target.ingredient.value
     const tag = event.target.tag.value
-    console.log({ ingredient, tag })
+    console.log('searching for recipes', { ingredient, tag })
     try {
       const data = await recipeService.getRecipe(ingredient, tag)
+      console.log('setting recipes to', data.results)
       setRecipes(data.results)
     } catch (e) {
       console.error(e)

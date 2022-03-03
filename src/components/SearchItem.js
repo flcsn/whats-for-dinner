@@ -1,13 +1,15 @@
 import React from 'react'
-import { GiChickenOven } from 'react-icons/gi'
 
-const SearchItem = () => {
+const SearchItem = ({ recipe }) => {
   return (
     <div className='search-item'>
-      <GiChickenOven style={{ height: '100px', width: '100px' }}/>
+      <img
+        src={recipe.thumbnail_url}
+        className='search-item-image'
+      />
       <div className='search-item-details'>
-        <h2 className='search-item-name'>Roast Chicken</h2>
-        <a className='search-item-link'>Link to Recipe</a>
+        <p className='search-item-name'>{recipe.name}</p>
+        <a className='search-item-link' href='#'>Link to Recipe</a>
       </div>
     </div>
   )

@@ -3,11 +3,11 @@ import React from 'react'
 import StatusHeader from './StatusHeader'
 import SearchResults from './SearchResults'
 
-const RightMainContainer = () => {
+const RightMainContainer = ({ recipes }) => {
   return (
     <div className='right-main-container'>
       <StatusHeader />
-      <SearchResults />
+      <SearchResults recipes={recipes} />
     </div>
   )
 }

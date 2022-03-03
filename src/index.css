@@ -144,6 +144,7 @@ ul {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100px 1fr;
+  gap: 10px;
   background-color: var(--color-white);
 }
 
@@ -165,6 +166,7 @@ ul {
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 10px; 
   padding: 20px;
+  overflow: scroll;
 }
 
 .search-item {
@@ -178,6 +180,12 @@ ul {
   padding: 10px;
 }
 
+.search-item-image {
+  height: 120px;
+  width: 120px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
 .search-item-details {
   display: grid;
   min-height: 100%;
@@ -188,7 +196,9 @@ ul {
 .search-item-name {
   display: grid;
   justify-self: end;
-  font-weight: 600;
+  text-align: right;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .search-item-link {
@@ -196,4 +206,5 @@ ul {
   align-self: end;
   justify-self: end;
   color: var(--color-primary);
+  font-size: 16px;
 }
