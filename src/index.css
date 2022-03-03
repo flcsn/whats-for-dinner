@@ -88,8 +88,14 @@ ul {
 }
 
 .app-title {
-  font-size: 20px;
+  font-size: 36px;
   letter-spacing: -1px;
+  text-shadow:
+  -2px -2px 0 var(--color-black),  
+  2px -2px 0 var(--color-black),
+  -2px 2px 0 var(--color-black),
+  2px 2px 0 var(--color-black);
+  color: var(--color-primary);
 }
 
 
@@ -143,6 +149,10 @@ ul {
   background-color: var(--color-secondary)
 }
 
+.submit-btn:hover {
+  background-color: darkred;
+}
+
 
 /* Right Main Container */
 
@@ -151,7 +161,6 @@ ul {
   grid-template-columns: 100%;
   grid-template-rows: 100px 1fr;
   gap: 10px;
-  background-color: var(--color-white);
 }
 
 
@@ -289,5 +298,6 @@ ul {
 }
 
 .recipe-step-instruction {
-  letter-spacing: 0.5px;
+  font-size: 14px;
+  letter-spacing: 0.75px;
 }
