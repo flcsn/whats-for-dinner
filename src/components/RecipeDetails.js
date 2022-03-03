@@ -2,7 +2,7 @@ import React from 'react'
 
 import RecipeStep from './RecipeStep'
 
-const RecipeDetails = ({ name, instructions }) => {
+const RecipeDetails = ({ name, instructions, handleClick }) => {
   return (
     <div className='recipe-details-container'>
       <div className='recipe-details'>
@@ -14,6 +14,12 @@ const RecipeDetails = ({ name, instructions }) => {
             instruction={instruction.display_text}
           />)
         }
+        <button
+          className='close-recipe-details'
+          onClick={handleClick}
+        >
+          &times;
+        </button>
       </div>
     </div>
   )
