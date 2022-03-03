@@ -3,9 +3,12 @@ import React from 'react'
 const SearchItem = ({ recipe }) => {
   return (
     <div className='search-item'>
-      <img src={recipe.thumbnail_url} style={{ height: '100px', width: '100px' }}/>
+      <img
+        src={recipe.thumbnail_url}
+        className='search-item-image'
+      />
       <div className='search-item-details'>
-        <h2 className='search-item-name'>{recipe.name}</h2>
+        <p className='search-item-name'>{recipe.name}</p>
         <a className='search-item-link' href='#'>Link to Recipe</a>
       </div>
     </div>
