@@ -17,7 +17,7 @@ const SearchItem = ({ recipe }) => {
           onClick={() => setDisplayDetails(true)}
         >Link to Recipe</button>
       </div>
-      {displayDetails && <RecipeDetails instructions={recipe.instructions} />}
+      {displayDetails && <RecipeDetails name={recipe.name} instructions={recipe.instructions} />}
     </div>
   )
 }
