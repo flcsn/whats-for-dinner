@@ -78,6 +78,9 @@ ul {
   min-height: 100%;
 }
 
+
+/* App Title */
+
 .app-title-container {
   display: grid;
   justify-items: center;
@@ -88,6 +91,9 @@ ul {
   font-size: 20px;
   letter-spacing: -1px;
 }
+
+
+/* User Input Form */
 
 .user-input-form {
   display: grid;
@@ -148,6 +154,9 @@ ul {
   background-color: var(--color-white);
 }
 
+
+/* Status Header */
+
 .status-header {
   display: grid;
   align-items: center;
@@ -160,6 +169,9 @@ ul {
   letter-spacing: -0.5px;
 }
 
+
+/* Search Results */
+
 .search-results {
   display: grid;
   grid-template-columns: 100%;
@@ -168,6 +180,9 @@ ul {
   padding: 20px;
   overflow: scroll;
 }
+
+
+/* Search Item */
 
 .search-item {
   display: grid;
