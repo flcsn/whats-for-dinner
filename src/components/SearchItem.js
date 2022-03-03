@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import RecipeDetails from './RecipeDetails'
 
 const SearchItem = ({ recipe }) => {
+  const [displayDetails, setDisplayDetails] = useState(false)
+
   return (
     <div className='search-item'>
       <img
@@ -9,8 +12,18 @@ const SearchItem = ({ recipe }) => {
       />
       <div className='search-item-details'>
         <p className='search-item-name'>{recipe.name}</p>
-        <a className='search-item-link' href='#'>Link to Recipe</a>
+        <button
+          className='search-item-link'
+          onClick={() => setDisplayDetails(true)}
+        >Link to Recipe</button>
       </div>
+      {displayDetails &&
+        <RecipeDetails
+          name={recipe.name}
+          instructions={recipe.instructions}
+          handleClick={() => setDisplayDetails(false)}
+        />
+      }
     </div>
   )
 }
