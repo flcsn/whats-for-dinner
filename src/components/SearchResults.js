@@ -3,6 +3,7 @@ import SearchItem from './SearchItem'
 
 const SearchResults = ({ recipes }) => {
   console.log('search results recipes', recipes)
+
   return (
     <div className='search-results'>
       { recipes.length !== 0
