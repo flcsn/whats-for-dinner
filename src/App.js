@@ -4,7 +4,7 @@ import LeftMainContainer from './components/LeftMainContainer'
 import RightMainContainer from './components/RightMainContainer'
 
 const App = () => {
-  const [recipes, setRecipes] = useState([])
+  const [recipes, setRecipes] = useState(null)
   const [ingredient, setIngredient] = useState('Any')
   const [tag, setTag] = useState('Any')
   const [displayStatusHeader, setDisplayStatusHeader] = useState(false)
