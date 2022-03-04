@@ -1,7 +1,7 @@
 import React from 'react'
 import recipeService from '../services/recipeService'
 
-const UserInputForm = ({ setRecipes }) => {
+const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHeader }) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const ingredient = event.target.ingredient.value
@@ -11,6 +11,7 @@ const UserInputForm = ({ setRecipes }) => {
       const data = await recipeService.getRecipe(ingredient, tag)
       console.log('setting recipes to', data.results)
       setRecipes(data.results)
+      setDisplayStatusHeader(true)
     } catch (e) {
       console.error(e)
     }
@@ -22,6 +23,7 @@ const UserInputForm = ({ setRecipes }) => {
         <label className='step-label'>Step 1: Select an ingredient </label>
         <select className='select-ingredient'
           defaultValue='Any'
+          onChange={(event) => setIngredient(event.target.value)}
           name='ingredient'
         >
           <option>Any</option>
@@ -34,6 +36,7 @@ const UserInputForm = ({ setRecipes }) => {
         <label className='step-label'>Step 2: Select a tag</label>
         <select className='select-tag'
           defaultValue='Any'
+          onChange={(event) => setTag(event.target.value)}
           name='tag'
         >
           <option>Any</option>
@@ -44,7 +47,7 @@ const UserInputForm = ({ setRecipes }) => {
       </div>
       <div className='step-3-container'>
         <label className='step-label'>Step 3: Find dinner ideas!</label>
-        <p>Search for dinner ideas with INGREDIENT and TAG</p>
+        <p>Click the button below to begin searching!</p>
         <div className='btn-container'>
           <button className='submit-btn' type='submit'>Go!</button>
         </div>

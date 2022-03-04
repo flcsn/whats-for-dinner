@@ -5,11 +5,24 @@ import RightMainContainer from './components/RightMainContainer'
 
 const App = () => {
   const [recipes, setRecipes] = useState([])
+  const [ingredient, setIngredient] = useState('')
+  const [tag, setTag] = useState('')
+  const [displayStatusHeader, setDisplayStatusHeader] = useState(false)
 
   return (
     <div className='main-container'>
-      <LeftMainContainer setRecipes={setRecipes} />
-      <RightMainContainer recipes={recipes}/>
+      <LeftMainContainer
+        setRecipes={setRecipes}
+        setIngredient={setIngredient}
+        setTag={setTag}
+        setDisplayStatusHeader={setDisplayStatusHeader}
+      />
+      <RightMainContainer
+        recipes={recipes}
+        ingredient={ingredient}
+        tag={tag}
+        displayStatusHeader={displayStatusHeader}
+      />
     </div>
   )
 }
