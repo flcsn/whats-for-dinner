@@ -4,6 +4,7 @@ import recipeService from '../services/recipeService'
 const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHeader }) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
+    setDisplayStatusHeader(true)
     const ingredient = event.target.ingredient.value
     const tag = event.target.tag.value
     console.log('searching for recipes', { ingredient, tag })
@@ -11,7 +12,6 @@ const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHead
       const data = await recipeService.getRecipe(ingredient, tag)
       console.log('setting recipes to', data.results)
       setRecipes(data.results)
-      setDisplayStatusHeader(true)
     } catch (e) {
       console.error(e)
     }

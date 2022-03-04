@@ -5,8 +5,8 @@ import RightMainContainer from './components/RightMainContainer'
 
 const App = () => {
   const [recipes, setRecipes] = useState([])
-  const [ingredient, setIngredient] = useState('')
-  const [tag, setTag] = useState('')
+  const [ingredient, setIngredient] = useState('Any')
+  const [tag, setTag] = useState('Any')
   const [displayStatusHeader, setDisplayStatusHeader] = useState(false)
 
   return (
