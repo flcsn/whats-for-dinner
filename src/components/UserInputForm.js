@@ -8,6 +8,8 @@ const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHead
     const ingredient = event.target.ingredient.value
     const tag = event.target.tag.value
     console.log('searching for recipes', { ingredient, tag })
+    setIngredient(ingredient)
+    setTag(tag)
     try {
       const data = await recipeService.getRecipe(ingredient, tag)
       console.log('setting recipes to', data.results)
@@ -23,7 +25,6 @@ const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHead
         <label className='step-label'>Step 1: Select an ingredient </label>
         <select className='select-ingredient'
           defaultValue='Any'
-          onChange={(event) => setIngredient(event.target.value)}
           name='ingredient'
         >
           <option>Any</option>
@@ -36,7 +37,6 @@ const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHead
         <label className='step-label'>Step 2: Select a tag</label>
         <select className='select-tag'
           defaultValue='Any'
-          onChange={(event) => setTag(event.target.value)}
           name='tag'
         >
           <option>Any</option>
