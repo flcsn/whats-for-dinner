@@ -6,7 +6,7 @@ const getRecipe = async (ingredient, tag) => {
   const response = await axios.get(tastyURL, {
     headers: {
       'x-rapidapi-host': 'tasty.p.rapidapi.com',
-      'x-rapidapi-key': process.env.REACT_APP_TASTY_API_KEY
+      'x-rapidapi-key': '46c7b8d39fmsh0a692f6a9564c55p188574jsn0ac567d9bf39'
     },
     params: {
       from: '0',
