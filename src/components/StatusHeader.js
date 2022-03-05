@@ -1,9 +1,15 @@
 import React from 'react'
 
-const StatusHeader = () => {
+const StatusHeader = ({ ingredient, tag, displayStatusHeader }) => {
   return (
     <div className='status-header'>
-      <p className='status-line'>Searching for INGREDIENT recipes that is TAG...</p>
+      { displayStatusHeader
+        ? <p className='status-line'>
+            Searching for { ingredient === 'Any' ? '' : `${ingredient} `}
+            recipes{ tag === 'Any' ? '...' : ` that are ${tag}...` } </p>
+        : <p className='status-line'>
+            Select an ingredient and tag to begin searching! </p>
+      }
     </div>
   )
 }
