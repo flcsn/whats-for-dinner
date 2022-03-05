@@ -21,8 +21,8 @@ const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHead
 
   return (
     <form className='user-input-form' onSubmit={handleSubmit}>
-      <div className='step-1-container'>
-        <label className='step-label'>Step 1: Select an ingredient </label>
+      <div className='step-container'>
+        <p className='step-label'>Step 1: Select an ingredient </p>
         <select className='select-ingredient'
           defaultValue='Any'
           name='ingredient'
@@ -33,8 +33,8 @@ const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHead
           <option>Vegetable</option>
         </select>
       </div>
-      <div className='step-2-container'>
-        <label className='step-label'>Step 2: Select a tag</label>
+      <div className='step-container'>
+        <p className='step-label'>Step 2: Select a tag</p>
         <select className='select-tag'
           defaultValue='Any'
           name='tag'
@@ -45,11 +45,10 @@ const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHead
           <option>Lactose-free</option>
         </select>
       </div>
-      <div className='step-3-container'>
-        <label className='step-label'>Step 3: Find dinner ideas!</label>
-        <p>Click the button below to begin searching!</p>
+      <div className='step-container'>
+        <p className='step-label'>Step 3: Find dinner ideas!</p>
         <div className='btn-container'>
-          <button className='submit-btn' type='submit'>Go!</button>
+          <button className='submit-btn' type='submit'>Search!</button>
         </div>
       </div>
     </form>

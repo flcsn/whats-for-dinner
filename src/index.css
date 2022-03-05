@@ -88,8 +88,8 @@ ul {
 }
 
 .app-title {
-  font-size: 36px;
-  letter-spacing: -1px;
+  font-size: 48px;
+  letter-spacing: -1.25px;
   text-shadow:
   -2px -2px 0 var(--color-black),  
   2px -2px 0 var(--color-black),
@@ -105,20 +105,30 @@ ul {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: repeat(3, fr);
+  justify-items: center;
   min-height: 100%;
+  padding: 50px
+}
+
+.step-container > * {
+  margin-bottom: 10px;
 }
 
 .step-label {
-  font-size: 18px;
+  font-size: 26px;
   font-weight: 600;
+  letter-spacing: -1.5px;
 }
 
 .select-tag, .select-ingredient {
   border: none;
   border-radius: 2px;
   padding: 10px 20px;
-  width: 200px;
+  width: 300px;
   background-color: #f8f8f8;
+  font-size: 20px;
+  color:rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.5px;
 }
 
 .select-tag:focus, .select-ingredient:focus {
@@ -126,22 +136,15 @@ ul {
   background-color: #f0f0f0;
 }
 
-.step-3-container {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 1fr 1fr;
-}
-
 .btn-container {
-  width: 80%;
-  margin: 0 auto;
+  width: 300px;
   align-self: end;
 }
 
 .submit-btn {
   width: 100%;
   border-radius: 2px;
-  padding: 7px 14px;
+  padding: 10px 20px;
   color: var(--color-white);
   font-weight: 600;
   text-transform: uppercase;
