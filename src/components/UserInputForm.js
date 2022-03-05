@@ -8,10 +8,15 @@ const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHead
     const ingredient = event.target.ingredient.value
     const tag = event.target.tag.value
     console.log('searching for recipes', { ingredient, tag })
-    setIngredient(ingredient)
-    setTag(tag)
+
+    // Tasty API requires that ingredients and tags are formatted in snake_case
+    const fixedIngredient = ingredient.toLowerCase().replace(/ /g,'_')
+    const fixedTag = tag.toLowerCase().replace(/ /g,'_')
+    console.log('fixed', { fixedIngredient, fixedTag })
+    setIngredient(fixedIngredient)
+    setTag(fixedTag)
     try {
-      const data = await recipeService.getRecipe(ingredient, tag)
+      const data = await recipeService.getRecipe(fixedIngredient, fixedTag)
       console.log('setting recipes to', data.results)
       setRecipes(data.results)
     } catch (e) {
@@ -28,8 +33,11 @@ const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHead
           name='ingredient'
         >
           <option>Any</option>
-          <option>chicken</option>
+          <option>Chicken</option>
           <option>Beef</option>
+          <option>Pork</option>
+          <option>Fish</option>
+          <option>Shrimp</option>
           <option>Vegetable</option>
         </select>
       </div>
@@ -40,9 +48,12 @@ const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHead
           name='tag'
         >
           <option>Any</option>
-          <option>under_30_minutes</option>
-          <option>Vegetarian</option>
-          <option>Lactose-free</option>
+          <option>5 ingredients or less</option>
+          <option>Under 30 minutes</option>
+          <option>Healthy</option>
+          <option>One pot or pan</option>
+          <option>Kid friendly</option>
+          <option>Comfort food</option>
         </select>
       </div>
       <div className='step-container'>
