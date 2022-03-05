@@ -8,7 +8,7 @@ const StatusHeader = ({ ingredient, tag, displayStatusHeader }) => {
             Searching for { ingredient === 'Any' ? '' : `${ingredient} `}
             recipes{ tag === 'Any' ? '...' : ` that are ${tag}...` } </p>
         : <p className='status-line'>
-            Select an ingredient and tag on the left to begin searching! </p>
+            Select an ingredient and tag to begin searching! </p>
       }
     </div>
   )

@@ -88,7 +88,7 @@ ul {
 }
 
 .app-title {
-  font-size: 48px;
+  font-size: 44px;
   letter-spacing: -1.25px;
   text-shadow:
   -2px -2px 0 var(--color-black),  
@@ -139,7 +139,6 @@ ul {
 
 .btn-container {
   width: 300px;
-  align-self: end;
 }
 
 .submit-btn {
@@ -201,6 +200,7 @@ ul {
   display: grid;
   min-height: 300px;
   grid-template-columns: 1fr 1fr;
+  gap: 10px;
   align-items: center;
   justify-items: center;
   border: 2px solid var(--color-black);
@@ -209,7 +209,7 @@ ul {
 }
 
 .search-item:hover {
-  background-color: rgba(0, 0, 0, 0.1)
+  background-color: rgba(0, 0, 0, 0.05)
 }
 
 .search-item-image {
@@ -309,4 +309,142 @@ ul {
 .recipe-step-instruction {
   font-size: 14px;
   letter-spacing: 0.75px;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 1024px) {
+  .app-title {
+    font-size: 36px;
+  }
+
+  .user-input-form {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .step-label, .search-item-name {
+    font-size: 20px;
+  }
+
+  .select-ingredient, .select-tag {
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    font-size: 12px;
+  }
+
+  .search-item {
+    min-height: 200px;
+  }
+
+  .search-item-image {
+    height: 150px;
+    width: 150px;
+  }
+
+
+}
+
+@media (max-width: 850px) {
+  .main-container {
+    grid-template-columns: 100vw;
+    grid-template-rows: 200px 1fr;
+  }
+
+  .left-main-container {
+    padding: 20px 0 0 0;
+    grid-gap: 20px;
+  }
+
+  .user-input-form {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100%;
+    padding: 10px;
+  }
+
+  .step-label {
+    font-size: 16px;
+    letter-spacing: -1px;
+  }
+
+  .select-ingredient, .select-tag, .submit-btn, .btn-container {
+    width: 180px;
+    font-size: 12px;
+  }
+
+  .search-results {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    grid-template-rows: 400px 1fr;
+  }
+
+  .app-title {
+    font-size: 44px;
+  }
+
+  .user-input-form {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .step-label {
+    font-size: 20px;
+  }
+
+  .select-ingredient, .select-tag, .submit-btn, .btn-container {
+    width: 250px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 36px;
+  }
+
+  .status-header {
+    text-align: center;
+  }
+
+  .search-item {
+    grid-template-columns: 1fr;
+  }
+
+  .search-item-name, .search-item-link {
+    justify-self: center;
+  }
+
+  .recipe-details {
+    padding: 50px 20px 10px 20px
+  }
+
+  .recipe-details > h2 {
+    margin-bottom: 20px;
+  }
+
+  .recipe-step {
+    grid-template-columns: 70px 1fr;
+  }
+}
+
+@media (max-width: 320px) {
+  .app-title {
+    font-size: 32px;
+  }
+
+  .step-label {
+    font-size: 18px;
+  }
+
+  .select-ingredient, .select-tag, .submit-btn, .btn-container {
+    width: 250px;
+    font-size: 14px;
+  }
 }
