@@ -5,6 +5,12 @@ import SkeletonResults from './SkeletonResults'
 const SearchResults = ({ recipes, searchOngoing }) => {
   console.log('search results recipes', recipes)
 
+  if (searchOngoing) {
+    return (
+      <SkeletonResults />
+    )
+  }
+
   return (
     <div className='search-results'>
       { recipes
@@ -12,9 +18,7 @@ const SearchResults = ({ recipes, searchOngoing }) => {
           ? recipes.map(recipe =>
             <SearchItem key={recipe.id} recipe={recipe} />)
           : <p>No matches found</p>
-        : searchOngoing
-          ? <SkeletonResults />
-          : <p>Search results of up to 20 matches will be displayed here</p>
+        : <p>Search results of up to 20 matches will be displayed here</p>
       }
     </div>
   )

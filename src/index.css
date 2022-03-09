@@ -385,7 +385,9 @@ ul {
     width: 150px;
   }
 
-
+  .skeleton-text, .skeleton-container > .skeleton-text:last-child {
+    height: 20px;
+  }
 }
 
 @media (max-width: 850px) {
