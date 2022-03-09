@@ -6,8 +6,9 @@ const StatusHeader = ({
   displayStatusHeader,
   searchOngoing
 }) => {
-  const ingredientText = ingredient === 'Any' ? '' : `${ingredient} `
-  const tagText = tag === 'Any' ? '' : `that are ${tag}`
+  const ingredientText = ingredient === 'Any' ? '' : `${ingredient.toLowerCase()} `
+  const tagText = tag === 'Any' ? '' : `that are ${tag.toLowerCase()}`
+
   return (
     <div className='status-header'>
       { displayStatusHeader

@@ -11,6 +11,7 @@ const UserInputForm = ({
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    setRecipes(null)
     setDisplayStatusHeader(true)
     setSearchOngoing(true)
     const ingredient = event.target.ingredient.value
