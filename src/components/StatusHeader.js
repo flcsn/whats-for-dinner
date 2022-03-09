@@ -6,16 +6,18 @@ const StatusHeader = ({
   displayStatusHeader,
   searchOngoing
 }) => {
+  const ingredientText = ingredient === 'Any' ? '' : `${ingredient} `
+  const tagText = tag === 'Any' ? '' : `that are ${tag}`
   return (
     <div className='status-header'>
       { displayStatusHeader
         ? searchOngoing
           ? <p className='status-line'>
-            Searching for { ingredient === 'Any' ? '' : `${ingredient} `}
-            recipes{ tag === 'Any' ? '...' : ` that are ${tag}...` } </p>
+            Searching for {ingredientText}
+            recipes {tagText}</p>
           : <p className='status-line'>
-              Displaying results for {ingredient} recipes that are {tag}
-          </p>
+              Displaying results for {ingredientText}
+              recipes {tagText}</p>
         : <p className='status-line'>
             Select an ingredient and tag to begin searching! </p>
       }
