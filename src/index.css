@@ -457,10 +457,20 @@ ul {
 
   .search-item {
     grid-template-columns: 1fr;
+    padding: 10px;
   }
 
   .search-item-name, .search-item-link {
     justify-self: center;
+    text-align: center;
+  }
+
+  .skeleton-container {
+    align-items: center;
+  }
+
+  .search-item-details {
+    min-height: 100px;
   }
 
   .recipe-details {
