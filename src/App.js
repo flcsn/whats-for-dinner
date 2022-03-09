@@ -8,6 +8,7 @@ const App = () => {
   const [ingredient, setIngredient] = useState('Any')
   const [tag, setTag] = useState('Any')
   const [displayStatusHeader, setDisplayStatusHeader] = useState(false)
+  const [searchOngoing, setSearchOngoing] = useState(false)
 
   return (
     <div className='main-container'>
@@ -16,12 +17,14 @@ const App = () => {
         setIngredient={setIngredient}
         setTag={setTag}
         setDisplayStatusHeader={setDisplayStatusHeader}
+        setSearchOngoing={setSearchOngoing}
       />
       <RightMainContainer
         recipes={recipes}
         ingredient={ingredient}
         tag={tag}
         displayStatusHeader={displayStatusHeader}
+        searchOngoing={searchOngoing}
       />
     </div>
   )

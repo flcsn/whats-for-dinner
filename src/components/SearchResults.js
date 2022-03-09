@@ -2,7 +2,7 @@ import React from 'react'
 import SearchItem from './SearchItem'
 import SkeletonResults from './SkeletonResults'
 
-const SearchResults = ({ recipes }) => {
+const SearchResults = ({ recipes, searchOngoing }) => {
   console.log('search results recipes', recipes)
 
   return (
@@ -12,7 +12,9 @@ const SearchResults = ({ recipes }) => {
           ? recipes.map(recipe =>
             <SearchItem key={recipe.id} recipe={recipe} />)
           : <p>No matches found</p>
-        : <SkeletonResults />
+        : searchOngoing
+          ? <SkeletonResults />
+          : <p>Search results of up to 20 matches will be displayed here</p>
       }
     </div>
   )

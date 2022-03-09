@@ -3,7 +3,13 @@ import React from 'react'
 import AppTitle from './AppTitle'
 import UserInputForm from './UserInputForm'
 
-const LeftMainContainer = ({ setRecipes, setIngredient, setTag, setDisplayStatusHeader }) => {
+const LeftMainContainer = ({
+  setRecipes,
+  setIngredient,
+  setTag,
+  setDisplayStatusHeader,
+  setSearchOngoing
+}) => {
   return (
     <div className='left-main-container'>
       <AppTitle />
@@ -12,6 +18,7 @@ const LeftMainContainer = ({ setRecipes, setIngredient, setTag, setDisplayStatus
         setIngredient={setIngredient}
         setTag={setTag}
         setDisplayStatusHeader={setDisplayStatusHeader}
+        setSearchOngoing={setSearchOngoing}
       />
     </div>
   )
