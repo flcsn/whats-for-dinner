@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchItem from './SearchItem'
+import SkeletonItem from './SkeletonItem'
 
 const SearchResults = ({ recipes }) => {
   console.log('search results recipes', recipes)
@@ -11,7 +12,7 @@ const SearchResults = ({ recipes }) => {
           ? recipes.map(recipe =>
             <SearchItem key={recipe.id} recipe={recipe} />)
           : <p>No matches found</p>
-        : <p>Search results of at most 20 matches will be displayed here</p>
+        : <SkeletonItem />
       }
     </div>
   )
