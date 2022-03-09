@@ -1,8 +1,15 @@
 import React from 'react'
 import SearchItem from './SearchItem'
+import SkeletonResults from './SkeletonResults'
 
-const SearchResults = ({ recipes }) => {
+const SearchResults = ({ recipes, searchOngoing }) => {
   console.log('search results recipes', recipes)
+
+  if (searchOngoing) {
+    return (
+      <SkeletonResults />
+    )
+  }
 
   return (
     <div className='search-results'>
@@ -11,7 +18,7 @@ const SearchResults = ({ recipes }) => {
           ? recipes.map(recipe =>
             <SearchItem key={recipe.id} recipe={recipe} />)
           : <p>No matches found</p>
-        : <p>Search results of at most 20 matches will be displayed here</p>
+        : <p>Search results of up to 20 matches will be displayed here</p>
       }
     </div>
   )

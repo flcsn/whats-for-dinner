@@ -1,10 +1,19 @@
 import React from 'react'
 import recipeService from '../services/recipeService'
 
-const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHeader }) => {
+const UserInputForm = ({
+  setRecipes,
+  setIngredient,
+  setTag,
+  setDisplayStatusHeader,
+  setSearchOngoing
+}) => {
+
   const handleSubmit = async (event) => {
     event.preventDefault()
+    setRecipes(null)
     setDisplayStatusHeader(true)
+    setSearchOngoing(true)
     const ingredient = event.target.ingredient.value
     const tag = event.target.tag.value
     console.log('searching for recipes', { ingredient, tag })
@@ -22,6 +31,7 @@ const UserInputForm = ({ setRecipes, setIngredient, setTag, setDisplayStatusHead
     } catch (e) {
       console.error(e)
     }
+    setSearchOngoing(false)
   }
 
   return (

@@ -4,6 +4,23 @@ import RecipeDetails from './RecipeDetails'
 const SearchItem = ({ recipe }) => {
   const [displayDetails, setDisplayDetails] = useState(false)
 
+  const displayOn = () => {
+    console.log('on')
+    document.body.style.top = `-${window.scrollY}px`
+    document.body.style.position = 'fixed'
+    setDisplayDetails(true)
+  }
+
+  const displayOff = () => {
+    console.log('off')
+    const scrollY = document.body.style.top
+    console.log('y', scrollY)
+    document.body.style.position = ''
+    document.body.style.top = ''
+    window.scrollTo(0, parseInt(scrollY || '0') * -1)
+    setDisplayDetails(false)
+  }
+
   return (
     <div className='search-item'>
       <img
@@ -14,14 +31,14 @@ const SearchItem = ({ recipe }) => {
         <p className='search-item-name'>{recipe.name}</p>
         <button
           className='search-item-link'
-          onClick={() => setDisplayDetails(true)}
+          onClick={() => displayOn()}
         >Link to Recipe</button>
       </div>
       {displayDetails &&
         <RecipeDetails
           name={recipe.name}
           instructions={recipe.instructions}
-          handleClick={() => setDisplayDetails(false)}
+          handleClick={() => displayOff()}
         />
       }
     </div>
