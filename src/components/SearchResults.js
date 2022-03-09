@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchItem from './SearchItem'
-import SkeletonItem from './SkeletonItem'
+import SkeletonResults from './SkeletonResults'
 
 const SearchResults = ({ recipes }) => {
   console.log('search results recipes', recipes)
@@ -12,7 +12,7 @@ const SearchResults = ({ recipes }) => {
           ? recipes.map(recipe =>
             <SearchItem key={recipe.id} recipe={recipe} />)
           : <p>No matches found</p>
-        : <SkeletonItem />
+        : <SkeletonResults />
       }
     </div>
   )
